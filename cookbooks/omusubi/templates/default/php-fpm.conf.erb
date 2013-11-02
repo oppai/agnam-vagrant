@@ -11,6 +11,10 @@ server {
       try_files $uri $uri/ /agnam/public/index.php?$args;
   }
 
+  location /agnam/public/api/ {
+      try_files $uri $uri/ /agnam/public/api/index.php?$args;
+  }
+
   location /kuririn/public/ {
       try_files $uri $uri/ /kuririn/public/index.php?$args;
   }
