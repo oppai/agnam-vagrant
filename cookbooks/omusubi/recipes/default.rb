@@ -23,7 +23,7 @@ end
 
 execute 'mysqladmin' do
   command 'mysqladmin password -u root ' + node.default[:mysql][:password]
-  not_if { ::File.exists?("/usr/share/nginx/www/phpmyadmin")}
+  not_if { ::File.exists?("/vagrant_data/phpmyadmin")}
 end
 
 execute "phpmyadmin-install" do
