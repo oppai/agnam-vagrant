@@ -16,6 +16,10 @@ Vagrant.configure("2") do |config|
   #doc_root = '/vagrant_data/app/webroot'
   
   config.vm.synced_folder src_dir, "/vagrant_data", :create => true, :owner=> 'vagrant', :group=>'www-data', :mount_options => ['dmode=775','fmode=775']
+  
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+  end
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "./cookbooks"
