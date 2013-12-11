@@ -2,7 +2,7 @@ execute "apt-get" do
   command "apt-get update"
 end
 
-packages = %w{git subversion apache2 php5 php5-mysql  php5-pgsql php5-curl php5-cli php5-fpm php-pear mysql-server postgresql curl imagemagick php5-imagick phpmyadmin}
+packages = %w{git subversion nginx php5 php5-mysql  php5-pgsql php5-curl php5-cli php5-fpm php-pear mysql-server postgresql curl imagemagick php5-imagick phpmyadmin}
 
 packages.each do |pkg|
   package pkg do
@@ -31,9 +31,9 @@ execute "phpmyadmin-install" do
   not_if { ::File.exists?("/vagrant_data/phpmyadmin")}
 end
 
-template "/etc/apache2/conf.d/agnam.httpd.conf" do
+template "/etc/nginx/conf.d/php-fpm.conf" do
   mode 0644
-  source "agnam.httpd.conf.erb"
+  source "php-fpm.conf.erb"
 end
 
 template "/etc/php5/fpm/pool.d/www2.conf" do
@@ -45,7 +45,7 @@ service 'apache2' do
   action :stop
 end
 
-%w{mysql postgresql php5-fpm apache2}.each do |service_name|
+%w{mysql postgresql php5-fpm nginx}.each do |service_name|
   service service_name do
     action [:start, :restart]
   end

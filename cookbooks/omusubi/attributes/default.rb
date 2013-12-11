@@ -1,6 +1,6 @@
 default['versions']['git'] = '1:1.7.9*'
-default['versions']['apache2'] = '2.2.22*'
 default['versions']['subversion'] = '1.6.17*'
+default['versions']['nginx'] = '1.1.19*'
 default['versions']['php5'] = '5.3.10*'
 default['versions']['php5-mysql'] = '5.3.10*'
 default['versions']['php5-pgsql'] = '5.3.10*'
