@@ -1,7 +1,6 @@
-php5-nginx-vagrant-sample
+oppai/agnam-vagrant
 =========================
-
-[English Readme](https://github.com/yandod/php5-nginx-vagrant-sample/blob/master/README_en.md)
+このリポジトリは[yandod/php5-nginx-vagrant-sample](https://github.com/yandod/php5-nginx-vagrant-sample)を派生させたものです。必要な物以外はそのままのものを利用しているので、注意して利用してください。
 
 Vagrantを使ってPHPとMySQLが動作する環境を自動で設定します。OSなどに依存しないXAMPP/MAMPのようなものと考えてください。
 
@@ -33,7 +32,7 @@ VirtualBoxをセットアップしてください。
 ### このリポジトリをクローン
 gitでクローンするか、ZIPなどでダウンロードしてください。
 <pre>
-git clone git://github.com/yandod/php5-nginx-vagrant-sample.git
+git clone git://github.com/oppai/agnam-vagrant.git
 </pre>
 
 ### ソースコードの準備
@@ -42,7 +41,7 @@ git clone git://github.com/yandod/php5-nginx-vagrant-sample.git
 ### vagrantを起動
 クローンしたリポジトリ内でvagrantを起動。初回のみOSのダウンロードに時間がかかります。
 <pre>
-cd php5-nginx-vagrant-sample
+cd agnam-vagrant
 vagrant up
 </pre>
 
